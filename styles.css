@@ -28,6 +28,7 @@ html, body {
 --------------------------------*/
 .navbar {
   background-color: #e5e7eb; /* lighter background to contrast black text */
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .navbar .navbar-brand {
@@ -73,21 +74,69 @@ html, body {
 /* -----------------------------
    Main Content
 --------------------------------*/
-.content h1, .content h2 {
+.content h1 {
   font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  font-size: 2.5rem;
+}
+
+.content-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.content-hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.content-hero-image:hover {
+  transform: scale(1.02);
+}
+
+.content h2 {
+  font-weight: 700;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
   color: var(--text-dark);
+  font-size: 1.5rem;
+}
+
+.content h2:first-of-type {
+  margin-top: 1.5rem;
 }
 
 .content p {
   color: var(--text-dark);
   margin-bottom: 1rem;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 .content .lead {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 300;
   color: var(--text-dark);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.content ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.content ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
 }
 
 /* -----------------------------
@@ -116,24 +165,39 @@ html, body {
 /* -----------------------------
    Buttons
 --------------------------------*/
-.btn-primary {
-  background-color: var(--accent);
-  border-color: var(--accent);
+
+/* Positives button */
+.btn-positives {
+  background-color: #60a5fa;
+  border: 2px solid #60a5fa;
   color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-  background-color: #2563eb;
-  border-color: #2563eb;
+.btn-positives:hover {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.btn-outline-dark {
-  border-color: var(--text-dark);
-  color: var(--text-dark);
+/* Negatives button */
+.btn-negatives {
+  background-color: #1e3a8a;
+  border: 2px solid #1e3a8a;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.btn-outline-dark:hover {
-  background-color: rgba(0,0,0,0.05);
+.btn-negatives:hover {
+  background-color: #1e40af;
+  border-color: #1e40af;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
 }
 
 /* -----------------------------
