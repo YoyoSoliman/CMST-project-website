@@ -1,14 +1,9 @@
 /* -----------------------------
    Global Styles
 --------------------------------*/
-:root{
+:root {
   --accent: #3b82f6;
-  --accent-dark: #2563eb;
   --muted: #6b7280;
-  --text-light: #ffffff;
-  --text-dark: #111827;
-  --bg-light: #f8fafc;
-  --bg-dark: #1f2937;
 }
 
 html, body {
@@ -17,24 +12,23 @@ html, body {
 
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: linear-gradient(180deg, var(--bg-light) 0%, #ffffff 100%);
-  color: var(--text-dark);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  color: #111827;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.7;
 }
 
 /* -----------------------------
    Hero Section
 --------------------------------*/
 .hero {
-  background-image: linear-gradient(135deg, rgba(59,130,246,0.92), rgba(99,102,241,0.92));
-  color: var(--text-light);
+  background-image: linear-gradient(135deg, rgba(59,130,246,0.95), rgba(99,102,241,0.95));
+  color: white;
 }
 
 .hero p,
 .hero .lead {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.95); /* text in hero remains white */
 }
 
 .hero .lead {
@@ -43,7 +37,7 @@ body {
 }
 
 .hero a.btn {
-  color: var(--text-light);
+  color: white;
 }
 
 /* -----------------------------
@@ -51,8 +45,6 @@ body {
 --------------------------------*/
 .card {
   border: none;
-  background-color: #ffffff;
-  color: var(--text-dark);
 }
 
 .card .card-body {
@@ -71,30 +63,23 @@ body {
 /* -----------------------------
    Content Styling
 --------------------------------*/
-.content h1,
-.content h2 {
+.content h1 {
   font-weight: 700;
-  color: var(--text-dark);
 }
 
-.content p,
-.content li {
-  color: var(--text-dark);
+.content p {
+  line-height: 1.7;
+  color: #000000; /* all paragraph text is now black */
   margin-bottom: 1rem;
 }
 
 .content .lead {
   font-weight: 500;
+  color: #000000; /* ensure lead paragraphs are black too */
+}
+
+.lead {
   color: var(--muted);
-}
-
-article.content a {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-article.content a:hover {
-  color: var(--accent-dark);
 }
 
 /* -----------------------------
@@ -116,16 +101,14 @@ article.content a:hover {
    Footer
 --------------------------------*/
 .footer {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  border-top: 1px solid rgba(255,255,255,.03);
 }
 
 /* -----------------------------
    Background Utilities
 --------------------------------*/
 .bg-gradient {
-  background: linear-gradient(90deg, rgba(59,130,246,0.95) 0%, rgba(99,102,241,0.95) 100%);
+  background: linear-gradient(90deg, rgba(59,130,246,.95) 0%, rgba(99,102,241,.95) 100%);
 }
 
 /* -----------------------------
@@ -134,22 +117,11 @@ article.content a:hover {
 .btn-primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: var(--text-light);
 }
 
 .btn-primary:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
-}
-
-.btn-outline-light {
-  color: var(--text-light);
-  border-color: var(--text-light);
-}
-
-.btn-outline-light:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text-light);
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
 /* -----------------------------
