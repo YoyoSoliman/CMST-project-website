@@ -7,44 +7,87 @@
   --bg-light: #f8fafc;
   --text-dark: #111111;
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  font-size: 16px;
-  line-height: 1.7;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-  scroll-behavior: smooth;
-}
-
+/* Navbar styling removed to keep Bootstrap defaults */
 /* -----------------------------
-   Navbar
+   Prev/Next Navigation Buttons
 --------------------------------*/
-.navbar {
-  background-color: #e5e7eb; /* lighter background to contrast black text */
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+.nav-buttons {
+  display: flex;
+  justify-content: center; /* center the button group */
+  align-items: center;
+  gap: 3.5rem; /* extra space between text links */
+  margin: 1.5rem 0 2rem; /* space above footer */
+  padding: 0.35rem; /* a bit of padding for touch targets */
+  position: static; /* keep in flow so it sits above footer */
 }
 
-.navbar .navbar-brand {
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.navbar .nav-link {
-  color: var(--text-dark);
-  padding: 0.5rem 1rem;
-}
-
+/* Make sure nav links show active state boldly */
 .navbar .nav-link.active {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+/* remove addition page bottom padding; nav-buttons are static now */
+
+.nav-buttons .btn-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.4rem; /* small padding for click area */
+  border-radius: 0; /* no rounded box */
+  border: none; /* remove border */
+  text-decoration: none;
+  width: 160px;          /* equal width for symmetry */
+  justify-content: center; /* center icon + text */
   font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.btn-nav--prev {
+  background: none;
+  color: var(--accent); /* make Prev blue as requested */
+  border-color: transparent;
+  padding-right: 0.25rem;
+}
+
+.btn-nav--prev:hover,
+.btn-nav--prev:focus {
   text-decoration: underline;
 }
+
+.btn-nav--next {
+  background: none;
+  color: var(--accent);
+  border-color: transparent;
+  padding-left: 0.25rem; /* spacing between icon and text */
+}
+
+.btn-nav--next:hover,
+.btn-nav--next:focus {
+  text-decoration: underline;
+}
+
+.nav-buttons .icon-chevron {
+  font-size: 1rem;
+  color: inherit; /* match the text color */
+  line-height: 1;
+}
+
+.nav-buttons .btn-text {
+  display: inline-block;
+}
+
+@media (max-width: 575px) {
+  .nav-buttons { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+  .nav-buttons .btn-nav { width: 100%; justify-content: center; }
+}
+
+/* nav-buttons stay static across all screen sizes (static above footer) */
+
+.btn-nav:focus-visible { outline: none; text-decoration: underline; }
 
 /* -----------------------------
    Hero Section
@@ -200,6 +243,9 @@ html, body {
   box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
 }
 
+/* removed legacy page-next styles in favor of .nav-buttons */
+
+
 /* -----------------------------
    Footer
 --------------------------------*/
@@ -228,4 +274,10 @@ html, body {
   .hero p, .hero .lead {
     font-size: 1rem;
   }
+}
+
+/* Desktop: keep nav-buttons centered and slightly reduce gap */
+@media (min-width: 768px) {
+  .nav-buttons { justify-content: center; gap: 2rem; }
+  .nav-buttons .btn-nav { width: 140px; }
 }
