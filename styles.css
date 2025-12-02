@@ -4,51 +4,100 @@
 :root {
   --accent: #3b82f6;
   --muted: #6b7280;
+  --bg-light: #f8fafc;
+  --text-dark: #111111;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
-  height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 16px;
+  line-height: 1.7;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-  color: #111827;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* -----------------------------
+   Navbar
+--------------------------------*/
+.navbar {
+  background-color: #111827;
+}
+
+.navbar .navbar-brand {
+  font-weight: 600;
+  color: white;
+}
+
+.navbar .nav-link {
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.navbar .nav-link.active {
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 /* -----------------------------
    Hero Section
 --------------------------------*/
 .hero {
-  background-image: linear-gradient(135deg, rgba(59,130,246,0.95), rgba(99,102,241,0.95));
+  background: linear-gradient(135deg, rgba(59,130,246,0.95), rgba(99,102,241,0.95));
   color: white;
+  padding: 5rem 0;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .hero p,
 .hero .lead {
-  color: rgba(255, 255, 255, 0.95); /* text in hero remains white */
+  color: #ffffff;
 }
 
-.hero .lead {
+.hero a.btn {
+  margin-top: 1rem;
+}
+
+/* -----------------------------
+   Main Content
+--------------------------------*/
+.content h1, .content h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.content .lead {
   font-size: 1.25rem;
   font-weight: 500;
 }
 
-.hero a.btn {
-  color: white;
-}
-
 /* -----------------------------
-   Cards
+   Cards & Sidebar
 --------------------------------*/
 .card {
   border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .card .card-body {
-  padding: 1.25rem 1.25rem;
+  padding: 1.25rem;
 }
 
 .card-img-top {
@@ -56,72 +105,46 @@ body {
   height: 180px;
 }
 
-.shadow-sm {
-  box-shadow: 0px 6px 18px rgba(15,23,42,0.05);
-}
-
-/* -----------------------------
-   Content Styling
---------------------------------*/
-.content h1 {
-  font-weight: 700;
-}
-
-.content p {
-  line-height: 1.7;
-  color: #000000; /* all paragraph text is now black */
-  margin-bottom: 1rem;
-}
-
-.content .lead {
-  font-weight: 500;
-  color: #000000; /* ensure lead paragraphs are black too */
-}
-
-.lead {
-  color: var(--muted);
-}
-
-/* -----------------------------
-   Navbar
---------------------------------*/
 .sticky-top {
-  top: 95px;
-}
-
-.site-header .navbar-brand {
-  font-weight: 600;
-}
-
-.navbar .nav-link {
-  padding: 0.5rem 1rem;
-}
-
-/* -----------------------------
-   Footer
---------------------------------*/
-.footer {
-  border-top: 1px solid rgba(255,255,255,.03);
-}
-
-/* -----------------------------
-   Background Utilities
---------------------------------*/
-.bg-gradient {
-  background: linear-gradient(90deg, rgba(59,130,246,.95) 0%, rgba(99,102,241,.95) 100%);
+  top: 1rem;
 }
 
 /* -----------------------------
    Buttons
 --------------------------------*/
 .btn-primary {
-  background: var(--accent);
+  background-color: var(--accent);
   border-color: var(--accent);
+  color: white;
 }
 
 .btn-primary:hover {
-  background: #2563eb;
+  background-color: #2563eb;
   border-color: #2563eb;
+}
+
+.btn-outline-light {
+  border-color: white;
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* -----------------------------
+   Footer
+--------------------------------*/
+.footer {
+  background-color: #111827;
+  color: white;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer small {
+  color: #9ca3af;
 }
 
 /* -----------------------------
@@ -130,5 +153,11 @@ body {
 @media (max-width: 991px) {
   .sticky-top {
     position: static !important;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p, .hero .lead {
+    font-size: 1rem;
   }
 }
