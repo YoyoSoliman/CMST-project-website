@@ -1,51 +1,135 @@
-/* Global styles */
+/* -----------------------------
+   Global Styles
+--------------------------------*/
 :root{
   --accent: #3b82f6;
   --muted: #6b7280;
 }
-html,body{height:100%;}
-body{
+
+html, body {
+  height: 100%;
+}
+
+body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-  color:#111827;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.hero{
-  background-image: linear-gradient(135deg, rgba(59,130,246,.92), rgba(99,102,241,.92));
+
+/* -----------------------------
+   Hero Section
+--------------------------------*/
+.hero {
+  background-image: linear-gradient(135deg, rgba(59,130,246,0.95), rgba(99,102,241,0.95));
   color: white;
 }
-.hero p{color: rgba(255,255,255,0.95);}
-.card{border: none;}
-.card .card-body{padding:1.25rem 1.25rem;}
-.content h1{font-weight:700;}
-.lead{color:var(--muted);} 
-.sticky-top{top:95px;} 
-.site-header .navbar-brand{font-weight:600;}
-.footer{border-top: 1px solid rgba(255,255,255,.03);} 
 
-/* small screens: make cards full width */
-@media (max-width: 991px){
-  .sticky-top{position: static !important;}
+.hero p,
+.hero .lead {
+  color: rgba(255, 255, 255, 0.95); /* force all text in hero to be readable */
 }
 
-/* Small helper utilities */
-.bg-gradient{background: linear-gradient(90deg, rgba(59,130,246,.95) 0%, rgba(99,102,241,.95) 100%);} 
+.hero .lead {
+  font-size: 1.25rem; /* optional, slightly larger */
+  font-weight: 500;
+}
 
-/* Nice button focus */
-.btn-primary{background:var(--accent);border-color:var(--accent);} 
-.btn-primary:hover{background:#2563eb;border-color:#2563eb;} 
+.hero a.btn {
+  color: white; /* ensure buttons are readable */
+}
 
-/* Article content styling */
-.content p{line-height:1.7;color:#374151;margin-bottom:1rem}
-.content .lead{font-weight: 500;}
+/* -----------------------------
+   Cards
+--------------------------------*/
+.card {
+  border: none;
+}
 
-.card-img-top{object-fit:cover;height:180px}
+.card .card-body {
+  padding: 1.25rem 1.25rem;
+}
 
-/* improve navbar link spacing */
-.navbar .nav-link{padding:0.5rem 1rem}
+.card-img-top {
+  object-fit: cover;
+  height: 180px;
+}
 
-/* subtle shadows */
-.shadow-sm{box-shadow: 0px 6px 18px rgba(15,23,42,0.05);} 
+.shadow-sm {
+  box-shadow: 0px 6px 18px rgba(15,23,42,0.05);
+}
+
+/* -----------------------------
+   Content Styling
+--------------------------------*/
+.content h1 {
+  font-weight: 700;
+}
+
+.content p {
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.content .lead {
+  font-weight: 500;
+}
+
+.lead {
+  color: var(--muted);
+}
+
+/* -----------------------------
+   Navbar
+--------------------------------*/
+.sticky-top {
+  top: 95px;
+}
+
+.site-header .navbar-brand {
+  font-weight: 600;
+}
+
+.navbar .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+/* -----------------------------
+   Footer
+--------------------------------*/
+.footer {
+  border-top: 1px solid rgba(255,255,255,.03);
+}
+
+/* -----------------------------
+   Background Utilities
+--------------------------------*/
+.bg-gradient {
+  background: linear-gradient(90deg, rgba(59,130,246,.95) 0%, rgba(99,102,241,.95) 100%);
+}
+
+/* -----------------------------
+   Buttons
+--------------------------------*/
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* -----------------------------
+   Responsive Adjustments
+--------------------------------*/
+@media (max-width: 991px) {
+  .sticky-top {
+    position: static !important;
+  }
+}
 
 
