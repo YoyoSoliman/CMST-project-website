@@ -3,7 +3,12 @@
 --------------------------------*/
 :root{
   --accent: #3b82f6;
+  --accent-dark: #2563eb;
   --muted: #6b7280;
+  --text-light: #ffffff;
+  --text-dark: #111827;
+  --bg-light: #f8fafc;
+  --bg-dark: #1f2937;
 }
 
 html, body {
@@ -12,32 +17,33 @@ html, body {
 
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-  color: #111827;
+  background: linear-gradient(180deg, var(--bg-light) 0%, #ffffff 100%);
+  color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
 }
 
 /* -----------------------------
    Hero Section
 --------------------------------*/
 .hero {
-  background-image: linear-gradient(135deg, rgba(59,130,246,0.95), rgba(99,102,241,0.95));
-  color: white;
+  background-image: linear-gradient(135deg, rgba(59,130,246,0.92), rgba(99,102,241,0.92));
+  color: var(--text-light);
 }
 
 .hero p,
 .hero .lead {
-  color: rgba(255, 255, 255, 0.95); /* force all text in hero to be readable */
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .hero .lead {
-  font-size: 1.25rem; /* optional, slightly larger */
+  font-size: 1.25rem;
   font-weight: 500;
 }
 
 .hero a.btn {
-  color: white; /* ensure buttons are readable */
+  color: var(--text-light);
 }
 
 /* -----------------------------
@@ -45,6 +51,8 @@ body {
 --------------------------------*/
 .card {
   border: none;
+  background-color: #ffffff;
+  color: var(--text-dark);
 }
 
 .card .card-body {
@@ -63,22 +71,30 @@ body {
 /* -----------------------------
    Content Styling
 --------------------------------*/
-.content h1 {
+.content h1,
+.content h2 {
   font-weight: 700;
+  color: var(--text-dark);
 }
 
-.content p {
-  line-height: 1.7;
-  color: #374151;
+.content p,
+.content li {
+  color: var(--text-dark);
   margin-bottom: 1rem;
 }
 
 .content .lead {
   font-weight: 500;
+  color: var(--muted);
 }
 
-.lead {
-  color: var(--muted);
+article.content a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+article.content a:hover {
+  color: var(--accent-dark);
 }
 
 /* -----------------------------
@@ -100,14 +116,16 @@ body {
    Footer
 --------------------------------*/
 .footer {
-  border-top: 1px solid rgba(255,255,255,.03);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
 }
 
 /* -----------------------------
    Background Utilities
 --------------------------------*/
 .bg-gradient {
-  background: linear-gradient(90deg, rgba(59,130,246,.95) 0%, rgba(99,102,241,.95) 100%);
+  background: linear-gradient(90deg, rgba(59,130,246,0.95) 0%, rgba(99,102,241,0.95) 100%);
 }
 
 /* -----------------------------
@@ -116,11 +134,22 @@ body {
 .btn-primary {
   background: var(--accent);
   border-color: var(--accent);
+  color: var(--text-light);
 }
 
 .btn-primary:hover {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.btn-outline-light {
+  color: var(--text-light);
+  border-color: var(--text-light);
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
 }
 
 /* -----------------------------
@@ -131,5 +160,3 @@ body {
     position: static !important;
   }
 }
-
-
