@@ -27,16 +27,16 @@ html, body {
    Navbar
 --------------------------------*/
 .navbar {
-  background-color: #111827;
+  background-color: #e5e7eb; /* lighter background to contrast black text */
 }
 
 .navbar .navbar-brand {
   font-weight: 600;
-  color: white;
+  color: var(--text-dark);
 }
 
 .navbar .nav-link {
-  color: white;
+  color: var(--text-dark);
   padding: 0.5rem 1rem;
 }
 
@@ -49,8 +49,8 @@ html, body {
    Hero Section
 --------------------------------*/
 .hero {
-  background: linear-gradient(135deg, rgba(59,130,246,0.95), rgba(99,102,241,0.95));
-  color: white;
+  background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(99,102,241,0.2)); /* lighter gradient so black text is readable */
+  color: var(--text-dark);
   padding: 5rem 0;
 }
 
@@ -62,11 +62,12 @@ html, body {
 
 .hero p,
 .hero .lead {
-  color: #ffffff;
+  color: var(--text-dark);
 }
 
 .hero a.btn {
   margin-top: 1rem;
+  color: white; /* buttons keep white on accent background */
 }
 
 /* -----------------------------
@@ -75,6 +76,7 @@ html, body {
 .content h1, .content h2 {
   font-weight: 700;
   margin-bottom: 1rem;
+  color: var(--text-dark);
 }
 
 .content p {
@@ -85,6 +87,7 @@ html, body {
 .content .lead {
   font-size: 1.25rem;
   font-weight: 500;
+  color: var(--text-dark);
 }
 
 /* -----------------------------
@@ -98,6 +101,7 @@ html, body {
 
 .card .card-body {
   padding: 1.25rem;
+  color: var(--text-dark);
 }
 
 .card-img-top {
@@ -123,28 +127,28 @@ html, body {
   border-color: #2563eb;
 }
 
-.btn-outline-light {
-  border-color: white;
-  color: white;
+.btn-outline-dark {
+  border-color: var(--text-dark);
+  color: var(--text-dark);
 }
 
-.btn-outline-light:hover {
-  background-color: rgba(255,255,255,0.1);
+.btn-outline-dark:hover {
+  background-color: rgba(0,0,0,0.05);
 }
 
 /* -----------------------------
    Footer
 --------------------------------*/
 .footer {
-  background-color: #111827;
-  color: white;
+  background-color: #e5e7eb; /* lighter footer for black text */
+  color: var(--text-dark);
   padding: 1.5rem 0;
   font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(0,0,0,0.1);
 }
 
 .footer small {
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 /* -----------------------------
